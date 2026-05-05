@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "mail-500-miles-browser-chrome",
+      "critical": true,
+      "ocr_text": "Chrome File Edit View History Bookmarks Profiles Tab Window Help web.mit.edu/jemorris/humor/500-miles From: Trey Harris Here's a problem that sounded impossible. We can't send mail more than 500 miles from here. Call it 520 miles but no farther.",
+      "must_include_any": ["500", "miles", "email", "mail"],
+      "must_exclude": ["browser", "menu", "tab", "chrome"]
+    },
+    {
+      "id": "session-ended-shell-error",
+      "critical": true,
+      "ocr_text": "Warning Session Ended very soon after starting. bash: line 1: exec: $SHELL: not found. Shared connection closed.",
+      "must_include_any": ["session", "ended", "shell", "error", "warning"],
+      "must_exclude": ["browser", "menu", "tab"]
+    },
+    {
+      "id": "github-review-thread",
+      "critical": false,
+      "ocr_text": "Pull request review conversation. Please address comments before merge. Reviewer asked for stronger validation and edge-case tests.",
+      "must_include_any": ["review", "comment", "pull", "request", "merge"],
+      "must_exclude": ["browser", "menu", "tab"]
+    },
+    {
+      "id": "invoice-payment-reminder",
+      "critical": false,
+      "ocr_text": "Invoice #4932 payment reminder amount due $1,250.00 before March 15. Late fee applies after due date.",
+      "must_include_any": ["invoice", "payment", "due", "amount"],
+      "must_exclude": ["browser", "menu", "tab"]
+    },
+    {
+      "id": "deployment-failed-timeout",
+      "critical": true,
+      "ocr_text": "CI pipeline deploy step failed after timeout. Error: container startup exceeded 300 seconds.",
+      "must_include_any": ["deploy", "timeout", "failed", "error"],
+      "must_exclude": ["browser", "menu", "tab"]
+    },
+    {
+      "id": "meeting-agenda-content",
+      "critical": false,
+      "ocr_text": "Quarterly planning meeting agenda: roadmap, hiring plan, budget review, launch milestones.",
+      "must_include_any": ["meeting", "agenda", "roadmap", "quarterly"],
+      "must_exclude": ["browser", "menu", "tab"]
+    },
+    {
+      "id": "incident-slack-alert",
+      "critical": true,
+      "ocr_text": "SEV2 incident alert: API outage in us-west region. On-call acknowledged and started mitigation.",
+      "must_include_any": ["incident", "outage", "alert", "sev2"],
+      "must_exclude": ["browser", "menu", "tab"]
+    },
+    {
+      "id": "terminal-git-conflict",
+      "critical": false,
+      "ocr_text": "git rebase main stopped due to merge conflict in src/enrich.py. Resolve conflicts and continue rebase.",
+      "must_include_any": ["merge", "conflict", "git", "rebase"],
+      "must_exclude": ["browser", "menu", "tab"]
+    }
+  ]
+}

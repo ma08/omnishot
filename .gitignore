@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+*.egg
+
+# uv
+.python-version
+
+# Swift
+swift/.build/
+swift/.swiftpm/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Local task context and captured artifacts
+context/
+
+# Local launchd plist copies
+*.local.plist
+com.*.omnishot.plist
