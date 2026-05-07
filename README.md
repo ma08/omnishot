@@ -1,10 +1,12 @@
 # Omnishot
 
-Semantic macOS screenshots for agentic engineering.
+Auto-renames and organizes macOS screenshots with local Apple models, then makes
+the latest capture easy to paste anywhere: raw image bytes, path refs for remote
+agents, signed S3 URLs, or public links, all behind simple keybindings.
 
-Read the launch article: [Making Screenshots Agent-Native in Remote Workspaces](https://x.com/curious_queue/status/2051832335973364102?s=20).
+Read the launch article on X/Twitter: [Making Screenshots Agent-Native in Remote Workspaces](https://x.com/curious_queue/status/2051832335973364102?s=20).
 
-Watch the walkthrough thread: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
+See the demo clips in the walkthrough thread on X/Twitter: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
 
 [![Omnishot article cover: screenshots routed from a local Mac into path-ref, image paste, S3 URL, and public-link workflows](docs/assets/readme/omnishot-article-cover.png)](https://x.com/curious_queue/status/2051832335973364102?s=20)
 
