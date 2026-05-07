@@ -1,6 +1,14 @@
 # Omnishot
 
-Semantic macOS screenshots for agentic engineering.
+Auto-renames and organizes macOS screenshots with local Apple models, then makes
+the latest capture easy to paste anywhere: raw image bytes, path refs for remote
+agents, signed S3 URLs, or public links, all behind simple keybindings.
+
+Read the launch article on X/Twitter: [Making Screenshots Agent-Native in Remote Workspaces](https://x.com/curious_queue/status/2051832335973364102?s=20).
+
+See the demo clips in the walkthrough thread on X/Twitter: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
+
+[![Omnishot article cover: screenshots routed from a local Mac into path-ref, image paste, S3 URL, and public-link workflows](docs/assets/readme/omnishot-article-cover.png)](https://x.com/curious_queue/status/2051832335973364102?s=20)
 
 This is a small macOS utility that turns a normal screenshot into a named,
 routeable artifact:
@@ -13,6 +21,26 @@ routeable artifact:
 It is public as a reference implementation, not a polished product. The useful
 parts to copy are the workflow shape, paste-mode contract, machine alias
 convention, and agent instructions.
+
+## Ask Your Agent To Adapt This Repo
+
+Paste this into your coding agent before deciding what to copy:
+
+```text
+Read through https://github.com/ma08/omnishot and help me adapt
+the screenshot workflow to my own machine setup.
+
+Focus on reusable patterns, not copying the repo author's machine-specific config.
+
+Ask me targeted questions about:
+- where my screenshots land
+- whether I use local or remote coding agents
+- my SSH aliases between machines
+- whether I need S3/public links or only local SSH transfer
+- what apps I paste screenshots into most often
+
+Then recommend the smallest useful version I should implement.
+```
 
 ## Workflow At A Glance
 
@@ -43,6 +71,22 @@ screenshot -> named artifact -> route to the current surface
 ```
 
 S3 is one transport, not the whole point.
+
+## Visual Walkthrough
+
+The menu bar keeps the latest screenshot actions inspectable even when keyboard
+shortcuts are faster.
+
+<p align="center">
+  <img src="docs/assets/readme/menu-actions.png" alt="Omnishot menu bar actions showing path reference, S3 URL, image paste, public link, recent screenshots, and folder actions" width="760">
+</p>
+
+The local naming and upload pipeline is observable, so failures are not hidden
+inside a background watcher.
+
+<p align="center">
+  <img src="docs/assets/readme/langfuse-trace.png" alt="Langfuse trace for an Omnishot screenshot processing run" width="760">
+</p>
 
 ## Why It Exists
 
@@ -122,23 +166,55 @@ what to do with it:
 Reference implementation: [botfiles PR #23](https://github.com/ma08/botfiles/pull/23)
 adds this behavior to global Codex/Claude instructions.
 
-Ask your coding agent to adapt the pattern:
+## Demo Clips
 
-```text
-Read through https://github.com/ma08/omnishot and help me adapt
-the screenshot workflow to my own machine setup.
+The full walkthrough thread is on X: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
 
-Focus on reusable patterns, not copying the repo author's machine-specific config.
+GitHub strips inline MP4 players from README Markdown, so each card uses a
+short animated preview and links to a browser-playable hosted clip.
 
-Ask me targeted questions about:
-- where my screenshots land
-- whether I use local or remote coding agents
-- my SSH aliases between machines
-- whether I need S3/public links or only local SSH transfer
-- what apps I paste screenshots into most often
-
-Then recommend the smallest useful version I should implement.
-```
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-capture-and-remote-retrieval.mp4">
+        <img src="docs/assets/readme/clip-capture-and-remote-retrieval.gif" alt="Animated preview of Omnishot capturing a Mac screenshot and a remote agent retrieving it" width="720">
+      </a><br>
+      <strong>Capture + remote retrieval</strong><br>
+      <sub>Mac screenshot -> path-ref paste -> VM copies image into task artifacts.</sub><br>
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-capture-and-remote-retrieval.mp4">Watch clip</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-paste-routes-montage.mp4">
+        <img src="docs/assets/readme/clip-paste-routes-montage.gif" alt="Animated preview of Omnishot paste routes for path-ref, S3 links, public links, and picker access" width="720">
+      </a><br>
+      <strong>Paste routes montage</strong><br>
+      <sub>Path-ref, signed S3 URL, public URL, picker access, and link checks.</sub><br>
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-paste-routes-montage.mp4">Watch clip</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-menu-bar-controls.mp4">
+        <img src="docs/assets/readme/clip-menu-bar-controls.gif" alt="Animated preview of Omnishot menu bar controls for latest screenshot actions" width="720">
+      </a><br>
+      <strong>Menu bar controls</strong><br>
+      <sub>Latest image, path-ref, S3 URL, and public link actions.</sub><br>
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-menu-bar-controls.mp4">Watch clip</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-langfuse-trace.mp4">
+        <img src="docs/assets/readme/clip-langfuse-trace.gif" alt="Animated preview of a Langfuse trace for the Omnishot screenshot naming and upload pipeline" width="720">
+      </a><br>
+      <strong>Langfuse trace</strong><br>
+      <sub>Pipeline observability for screenshot naming and upload.</sub><br>
+      <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-langfuse-trace.mp4">Watch clip</a>
+    </td>
+  </tr>
+</table>
 
 ## Docs
 
