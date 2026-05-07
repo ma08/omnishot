@@ -2,6 +2,12 @@
 
 Semantic macOS screenshots for agentic engineering.
 
+Read the launch article: [Making Screenshots Agent-Native in Remote Workspaces](https://x.com/curious_queue/status/2051832335973364102?s=20).
+
+Watch the walkthrough thread: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
+
+[![Omnishot article cover: screenshots routed from a local Mac into path-ref, image paste, S3 URL, and public-link workflows](docs/assets/readme/omnishot-article-cover.png)](https://x.com/curious_queue/status/2051832335973364102?s=20)
+
 This is a small macOS utility that turns a normal screenshot into a named,
 routeable artifact:
 
@@ -13,6 +19,26 @@ routeable artifact:
 It is public as a reference implementation, not a polished product. The useful
 parts to copy are the workflow shape, paste-mode contract, machine alias
 convention, and agent instructions.
+
+## Ask Your Agent To Adapt This Repo
+
+Paste this into your coding agent before deciding what to copy:
+
+```text
+Read through https://github.com/ma08/omnishot and help me adapt
+the screenshot workflow to my own machine setup.
+
+Focus on reusable patterns, not copying the repo author's machine-specific config.
+
+Ask me targeted questions about:
+- where my screenshots land
+- whether I use local or remote coding agents
+- my SSH aliases between machines
+- whether I need S3/public links or only local SSH transfer
+- what apps I paste screenshots into most often
+
+Then recommend the smallest useful version I should implement.
+```
 
 ## Workflow At A Glance
 
@@ -43,6 +69,22 @@ screenshot -> named artifact -> route to the current surface
 ```
 
 S3 is one transport, not the whole point.
+
+## Visual Walkthrough
+
+The menu bar keeps the latest screenshot actions inspectable even when keyboard
+shortcuts are faster.
+
+<p align="center">
+  <img src="docs/assets/readme/menu-actions.png" alt="Omnishot menu bar actions showing path reference, S3 URL, image paste, public link, recent screenshots, and folder actions" width="760">
+</p>
+
+The local naming and upload pipeline is observable, so failures are not hidden
+inside a background watcher.
+
+<p align="center">
+  <img src="docs/assets/readme/langfuse-trace.png" alt="Langfuse trace for an Omnishot screenshot processing run" width="760">
+</p>
 
 ## Why It Exists
 
@@ -122,23 +164,35 @@ what to do with it:
 Reference implementation: [botfiles PR #23](https://github.com/ma08/botfiles/pull/23)
 adds this behavior to global Codex/Claude instructions.
 
-Ask your coding agent to adapt the pattern:
+## Demo Clips
 
-```text
-Read through https://github.com/ma08/omnishot and help me adapt
-the screenshot workflow to my own machine setup.
+The full walkthrough thread is on X: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
 
-Focus on reusable patterns, not copying the repo author's machine-specific config.
+The first clip shows the core path: take a Mac screenshot, paste a path-ref into
+a remote coding session, and let the VM retrieve the image into task artifacts.
 
-Ask me targeted questions about:
-- where my screenshots land
-- whether I use local or remote coding agents
-- my SSH aliases between machines
-- whether I need S3/public links or only local SSH transfer
-- what apps I paste screenshots into most often
+<video src="docs/assets/readme/clip-capture-and-remote-retrieval.mp4" controls muted width="760"></video>
 
-Then recommend the smallest useful version I should implement.
-```
+<details>
+<summary><strong>Paste routes montage</strong> - path-ref, signed S3 URL, public URL, picker access, and link checks</summary>
+
+<video src="docs/assets/readme/clip-paste-routes-montage.mp4" controls muted width="760"></video>
+
+</details>
+
+<details>
+<summary><strong>Menu bar controls</strong> - latest image, path-ref, S3 URL, and public link actions</summary>
+
+<video src="docs/assets/readme/clip-menu-bar-controls.mp4" controls muted width="760"></video>
+
+</details>
+
+<details>
+<summary><strong>Langfuse trace</strong> - pipeline observability for screenshot naming and upload</summary>
+
+<video src="docs/assets/readme/clip-langfuse-trace.mp4" controls muted width="760"></video>
+
+</details>
 
 ## Docs
 
