@@ -168,14 +168,14 @@ adds this behavior to global Codex/Claude instructions.
 
 The full walkthrough thread is on X: [Omnishot screenshot routing demos](https://x.com/curious_queue/status/2052106783590961660?s=20).
 
-GitHub does not consistently render repository-local MP4s inline in README
-pages, so each preview image below links to a browser-playable hosted clip.
+GitHub strips inline MP4 players from README Markdown, so each card uses a
+short animated preview and links to a browser-playable hosted clip.
 
 <table>
   <tr>
     <td align="center" width="50%">
       <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-capture-and-remote-retrieval.mp4">
-        <img src="docs/assets/readme/clip-capture-and-remote-retrieval.jpg" alt="Preview of Omnishot capturing a Mac screenshot and a remote agent retrieving it" width="360">
+        <img src="docs/assets/readme/clip-capture-and-remote-retrieval.gif" alt="Animated preview of Omnishot capturing a Mac screenshot and a remote agent retrieving it" width="360">
       </a><br>
       <strong>Capture + remote retrieval</strong><br>
       <sub>Mac screenshot -> path-ref paste -> VM copies image into task artifacts.</sub><br>
@@ -183,7 +183,7 @@ pages, so each preview image below links to a browser-playable hosted clip.
     </td>
     <td align="center" width="50%">
       <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-paste-routes-montage.mp4">
-        <img src="docs/assets/readme/clip-paste-routes-montage.jpg" alt="Preview of Omnishot paste routes for path-ref, S3 links, public links, and picker access" width="360">
+        <img src="docs/assets/readme/clip-paste-routes-montage.gif" alt="Animated preview of Omnishot paste routes for path-ref, S3 links, public links, and picker access" width="360">
       </a><br>
       <strong>Paste routes montage</strong><br>
       <sub>Path-ref, signed S3 URL, public URL, picker access, and link checks.</sub><br>
@@ -193,7 +193,7 @@ pages, so each preview image below links to a browser-playable hosted clip.
   <tr>
     <td align="center" width="50%">
       <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-menu-bar-controls.mp4">
-        <img src="docs/assets/readme/clip-menu-bar-controls.jpg" alt="Preview of Omnishot menu bar controls for latest screenshot actions" width="360">
+        <img src="docs/assets/readme/clip-menu-bar-controls.gif" alt="Animated preview of Omnishot menu bar controls for latest screenshot actions" width="360">
       </a><br>
       <strong>Menu bar controls</strong><br>
       <sub>Latest image, path-ref, S3 URL, and public link actions.</sub><br>
@@ -201,7 +201,7 @@ pages, so each preview image below links to a browser-playable hosted clip.
     </td>
     <td align="center" width="50%">
       <a href="https://sourya-screenshots.s3.amazonaws.com/omnishot/readme/clips/clip-langfuse-trace.mp4">
-        <img src="docs/assets/readme/clip-langfuse-trace.jpg" alt="Preview of a Langfuse trace for the Omnishot screenshot naming and upload pipeline" width="360">
+        <img src="docs/assets/readme/clip-langfuse-trace.gif" alt="Animated preview of a Langfuse trace for the Omnishot screenshot naming and upload pipeline" width="360">
       </a><br>
       <strong>Langfuse trace</strong><br>
       <sub>Pipeline observability for screenshot naming and upload.</sub><br>
